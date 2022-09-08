@@ -2,7 +2,8 @@ node_modules
 src/node_modules/*
 src/public/hot
 src/public/storage
-src/public/css/*.css
+src/public/css/
+src/public/fontawesome/css/
 /storage/*.key
 .env
 .env.backup
