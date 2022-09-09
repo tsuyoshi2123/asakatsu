@@ -1,15 +1,41 @@
 .header {
   width: 1440px;
-  height: 118px;
+  height: 80px;
   background: linear-gradient(89.99deg, #9CD1D3 54.85%, #BDECEE 86.42%);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
   &-title {
-    /* asakatsu */
-    font-size: 36px;
+    margin-top: 15px;
+    margin-left: 47px;
+    font-size: 30px;
     line-height: 44px;
     color: #6B6B6B;
   }
   &-box {
-    
+    display: flex;
+    margin-top: 6px;
+    width: 200px;
+    height: 70px;
+    margin-right: 131px;
+    align-items: center;
+    &-pic {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+    }
+    &-triangle {
+      margin-left: 5px;
+      color: #fff;
+    }
+    table {
+      margin-right: 30px;
+    }
+    table > tbody > tr > td {
+      color: #6B6B6B;
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
 }
