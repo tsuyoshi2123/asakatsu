@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/content.css">
     <link type="text/css" rel="stylesheet" href="{{ mix('fontawesome/css/app.css') }}">
     <title>asakatsu</title>
 </head>
