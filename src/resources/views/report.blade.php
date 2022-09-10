@@ -22,10 +22,11 @@
             <p class="area__time">2022 09/05 12:24:15</p>
             <div class="area__list">
                 <div class="area__list__user">
-                    <p class="name">カフェ太郎</p>
-                    <p class="comment">カフェレビュー</p>
-                    <p class="continued">継続：10</p>
-                    <p class="cumulative">累計：20</p>
+                    <img src="/image/fuji.png" alt="/" class="pic">
+                    <p class="area__list__user__font name">hoge太郎</p>
+                    <p class="area__list__user__font comment">hogeレビュー</p>
+                    <p class="area__list__user__font continued">継続：10</p>
+                    <p class="area__list__user__font cumulative">累計：20</p>
                 </div>
             </div>
         </div>

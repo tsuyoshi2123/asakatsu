@@ -38,16 +38,48 @@
     }
     &__list {
         width: 354px;
-        height: 430px;
+        height: 406px;
         margin: 0 auto;
-        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
     }
 }
 
 .area {
-    width: 900px;
+    width: 908px;
+    margin-left: 65px;
     &__time {
+        margin-top: 29px;
         text-align: center;
         font-size: 23px;
+        color: #BB6F6F;
+        margin-bottom: 49px;
+    }
+    &__list {
+        height: 468px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        &__user {
+            display: flex;
+            align-items: center;
+            height: 48px;
+            margin-top: 48px;
+            margin-left: 58px;
+            .pic {
+                width: 48px;
+                height: 50px;
+                object-fit: cover;
+                color: #BB6F6F;
+            }
+            &__font {
+                font-size: 16px;
+            }
+            .name, .comment, .continued {
+                margin-left: 100px;
+            }
+            .cumulative {
+                margin-left: 50px;
+            }
+        }
     }
 }
