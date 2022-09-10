@@ -4,18 +4,10 @@
         <div class="outer">
             <div class="outer__heading">
                 <p class="outer__heading__title">マップ</p>
-                <p class="outer__heading__lead">テスト区テスト市テスト町<br>テストマンション1-1-1<br>テストマンション1-1-1</p>
+                <p class="outer__heading__lead">テスト区テスト市テスト町<br>テストマンション1-1-1<br>テスト団地101</p>
             </div>
-            <div class="outer__index">
-                <p class="outer__index__tag weekly">週間</p>
-                <p class="outer__index__tag months">月間</p>
-                <p class="outer__index__tag years">年間</p>
-            </div>
-            <div class="outer__list">
-                <p class="outer__list__title"></p>
-                <p class="outer__list__section"></p>
-                <p class="outer__list__section"></p>
-                <p class="outer__list__section"></p>
+            <div id="list-tag">
+                <example-component></example-component>
             </div>
         </div>
         <div class="area">
