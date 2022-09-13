@@ -3,7 +3,7 @@
     display: flex;
     margin: 0 auto;
     width: 1330px;
-    padding-top: 71px;
+    padding-top: 55px;
 }
 
 .outer {
@@ -51,6 +51,14 @@
             text-align: center;
         }
     }
+    &__article {
+        color: red;
+        display: flex;
+        &__index {
+            margin-top: 20px;
+            margin-left: 45px;
+        }
+    }
 }
 
 .area {
@@ -71,7 +79,7 @@
             display: flex;
             align-items: center;
             height: 48px;
-            margin-top: 48px;
+            margin-top: 39px;
             margin-left: 58px;
             .pic {
                 width: 48px;
@@ -80,7 +88,7 @@
                 color: #BB6F6F;
             }
             &__font {
-                font-size: 16px;
+                font-size: 18px;
             }
             .name, .comment, .continued {
                 margin-left: 100px;
