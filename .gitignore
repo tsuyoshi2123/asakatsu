@@ -3,6 +3,7 @@ src/node_modules/*
 src/public/hot
 src/public/storage
 src/public/css/
+src/public/js/
 src/public/fontawesome/css/
 /storage/*.key
 .env
