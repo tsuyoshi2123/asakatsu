@@ -15,3 +15,4 @@ use App\Http\Controllers\ReportController;
 */
 
 Route::get('asakatsu', [ReportController::class, 'reportIndex']);
+Auth::routes();
