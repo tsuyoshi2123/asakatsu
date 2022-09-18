@@ -7,9 +7,10 @@
   justify-content: space-between;
   &__title {
     margin-top: 15px;
-    margin-left: 47px;
-    font-size: 30px;
+    margin-left: 70px;
+    font-size: 24px;
     line-height: 44px;
+    text-decoration: none;
     color: #6B6B6B;
   }
   &__box {
@@ -17,17 +18,8 @@
     margin-top: 6px;
     width: 200px;
     height: 70px;
-    margin-right: 131px;
+    margin-right: 90px;
     align-items: center;
-    &--pic {
-      width: 55px;
-      height: 55px;
-      object-fit: cover;
-    }
-    &--triangle {
-      margin-left: 5px;
-      color: #fff;
-    }
     table {
       margin-right: 30px;
     }
@@ -38,4 +30,29 @@
       line-height: 20px;
     }
   }
+}
+
+.navlink {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    &--pic {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+    }
+    &--triangle {
+      margin-left: 5px;
+      color: #fff;
+    }
+    &__item:last-child {
+        margin-left: 20px;
+    }
+    &__item {
+        list-style-type: none;
+        .login, .regist {
+            text-decoration: none;
+            color: #6B6B6B;
+        }
+    }
 }
