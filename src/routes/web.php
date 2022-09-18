@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,4 @@ use App\Http\Controllers\ReportController;
 
 Route::get('asakatsu', [ReportController::class, 'reportIndex']);
 Auth::routes();
+Route::get('/', [HomeController::class, 'index']);
