@@ -1,4 +1,4 @@
-@extends('header')
+@extends('layouts.header')
 @section('content')
     <div class="wrapper">
         <div class="outer">
