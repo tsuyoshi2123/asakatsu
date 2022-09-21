@@ -40,8 +40,9 @@
                     width: 450px;
                 }
                 .form-control {
-                    width: 337px;
+                    width: 317px;
                     height: 42px;
+                    font-size: 18px;
                 }
                 .password, .email {
                     width: 40px;
@@ -51,6 +52,8 @@
                 #password, #email {
                     border: 1px solid variables.$border-color;
                     border-radius: 5px;
+                    padding: 0 10px;
+                    color: variables.$font-color;
                 }
             }
         }

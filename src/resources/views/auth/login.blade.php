@@ -23,7 +23,7 @@
             </div>
             <div class="form__check">
                 <p class="form__check__wrap">
-                    <input type="checkbox" class="form__check__wrap--input">
+                    <input name="remember" type="checkbox" class="form__check__wrap--input">
                     <label for="remember" id="remember" class="form__check__wrap--remember">
                         {{ __('Remember Me') }}
                     </label>
