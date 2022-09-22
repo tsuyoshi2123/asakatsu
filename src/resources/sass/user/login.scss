@@ -34,9 +34,9 @@
                 display: flex;
                 justify-content: center;
                 .form-box {
+                    display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    display: flex;
                     width: 450px;
                 }
                 .form-control {
@@ -54,6 +54,12 @@
                     border-radius: 5px;
                     padding: 0 10px;
                     color: variables.$font-color;
+                }
+                .help-block {
+                    color: red;
+                    font-size: 12px;
+                    display: block;
+                    margin-bottom: -12px;
                 }
             }
         }
