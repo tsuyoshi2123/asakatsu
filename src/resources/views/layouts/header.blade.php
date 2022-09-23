@@ -13,34 +13,37 @@
 </head>
 <body>
     <div class="heade">
-        <a class="heade__title" href="{{ url('/') }}">asakatsu</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            <button class="heade__title">asakatsu</button>
+            @csrf
+        </form>
         <div class="heade__box">
-                <!-- Authentication Links -->
-                @auth
-                    <a href="/" class="navlink">
-                        <table style="height: 30px">
-                            <tr><td>継続/累計</td></tr>
-                            <tr><td>10/20</td></tr>
-                        </table>
-                        <img src="/image/fuji.png" alt="/" class="navlink--pic">
-                        <i class="fa-solid fa-caret-down navlink--triangle"></i>
-                    </a>
+            <!-- Authentication Links -->
+            @auth
+                <a href="/" class="navlink">
+                    <table style="height: 30px">
+                        <tr><td>継続/累計</td></tr>
+                        <tr><td>10/20</td></tr>
+                    </table>
+                    <img src="/image/fuji.png" alt="/" class="navlink--pic">
+                    <i class="fa-solid fa-caret-down navlink--triangle"></i>
+                </a>
+            @else
+                @guest
+                    @if (Route::has('login'))
+                        <li class="navlink__item">
+                            <a class="login" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                    @endif
+                    @if (Route::has('register'))
+                        <li class="navlink__item">
+                            <a class="regist" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
                 @else
-                    @guest
-                        @if (Route::has('login'))
-                            <li class="navlink__item">
-                                <a class="login" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                        @endif
-                        @if (Route::has('register'))
-                            <li class="navlink__item">
-                                <a class="regist" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
-                            {{-- other gust --}}
-                    @endguest
-                @endauth
+                        {{-- other gust --}}
+                @endguest
+            @endauth
         </div>
     </div>
     @yield('content')
