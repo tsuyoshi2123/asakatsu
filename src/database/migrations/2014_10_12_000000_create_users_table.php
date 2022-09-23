@@ -17,8 +17,10 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('comment')->nullable();
+            $table->string('file_name')->default('fuji.png');
+            $table->integer('total_continuation')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -5,6 +5,7 @@ src/public/storage
 src/public/css/
 src/public/js/
 src/public/fontawesome/css/
+src/public/mix-manifest.json
 /storage/*.key
 .env
 .env.backup
