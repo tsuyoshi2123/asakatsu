@@ -15,6 +15,6 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('asakatsu', [ReportController::class, 'reportIndex']);
 Auth::routes();
-Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/', [ReportController::class, 'reportIndex'])->name('report');
