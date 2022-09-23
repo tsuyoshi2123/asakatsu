@@ -1,7 +1,6 @@
-// @import '../base/variables.scss';
 @use '../base/variables';
 
-.login-container {
+.regist-container {
     width: 766px;
     margin: 0 auto;
     padding-top: 82px;
@@ -21,16 +20,17 @@
         }
     }
     .card__contents {
-        height: 310px;
+        height: 476px;
         border-radius: 0 0 10px 10px;
         border: 1px solid variables.$border-color;
         &__box {
             margin-top: 48px;
             margin-bottom: 29px;
-            &__item:last-child {
-                margin-top: 39px;
+            &__item:first-child {
+                margin-top: 0;
             }
             &__item {
+                margin-top: 33px;
                 display: flex;
                 justify-content: center;
                 .form-box {
@@ -44,12 +44,12 @@
                     height: 42px;
                     font-size: 18px;
                 }
-                .password, .email {
+                .name, .email, .password, .confirm-password {
                     width: 40px;
                     font-size: 14px;
                     color: variables.$font-color;
                 }
-                #password, #email {
+                #name, #email, #password, #confirm-password {
                     border: 1px solid variables.$border-color;
                     border-radius: 5px;
                     padding: 0 10px;
@@ -80,7 +80,7 @@
                     padding: 10px 7px;
                     color: variables.$font-color;
                 }
-                .btn--login {
+                .btn--regist {
                     font-size: 11px;
                     border-radius: 5px;
                     padding: 10px 12px;
@@ -90,7 +90,7 @@
                     text-align: center;
                     color: variables.$font-color;
                 }
-                .btn--login:hover {
+                .btn--regist:hover {
                     opacity: 0.8;
                 }
             }

@@ -1,77 +1,79 @@
-@extends('layouts.app')
+@extends('layouts.header')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+<div class="regist-container">
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+        <div class="card__section">
+            <p class="card__section__title">{{ __('Register') }}</p>
+        </div>
+        <div class="card__contents">
+            <div class="card__contents__box">
+                <div class="card__contents__box__item">
+                    <div class="registration">
+                        <p class="form-box">
+                            <label class="name" for="name">{{ __('name') }}</label>
+                            <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        </p>
+                        @error('name')
+                            <span class="help-block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="card__contents__box__item">
+                    <div class="registration">
+                        <p class="form-box">
+                            <label class="email" for="email">{{ __('Email') }}</label>
+                            <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        </p>
+                        @error('email')
+                            <span class="help-block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="card__contents__box__item">
+                    <div class="registration">
+                        <p class="form-box" for="password">
+                            <label class="password">{{ __('Password') }}</label>
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                        </p>
+                        @error('password')
+                            <span class="help-block invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="card__contents__box__item">
+                    <p class="form-box" for="confirm-password">
+                        <label class="confirm-password">{{ __('Confirm Password') }}</label>
+                        <input id="confirm-password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                    </p>
+                </div>
+            </div>
+            <div class="form__check">
+                <p class="form__check__wrap">
+                    <input name="remember" type="checkbox" class="form__check__wrap--input" {{ old('remember') ? 'checked' : '' }}>
+                    <label for="remember" id="remember" class="form__check__wrap--remember">
+                        {{ __('Remember Me') }}
+                    </label>
+                    <button type="submit" class="btn--regist">
+                        {{ __('Regist') }}
+                    </button>
+                </p>
+            </div>
+            <div class="forgot__box">
+                <div class="forgot__box__item">
+                    <a class="btn--forgot" href="{{ route('password.request') }}">
+                        {{ __('Forgot Your Password?') }}
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 @endsection
