@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('comment')->nullable();
             $table->string('file_name')->default('fuji.png');
-            $table->integer('total_continuation')->nullable();
+            $table->integer('total_continuation')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });
