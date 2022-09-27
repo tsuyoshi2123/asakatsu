@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class LoginController extends Controller
 {
@@ -28,6 +31,11 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+
+    /**
+     * Defualt Total continuation
+     */
+    protected $resetTotalContinuation = 1;
 
     /**
      * Create a new controller instance.
@@ -60,6 +68,8 @@ class LoginController extends Controller
                 $request->session()->put('auth.password_confirmed_at', time());
             }
 
+            $this->toCountContinuation();
+
             return $this->sendLoginResponse($request);
         }
 
@@ -69,5 +79,18 @@ class LoginController extends Controller
         $this->incrementLoginAttempts($request);
 
         return $this->sendFailedLoginResponse($request);
+    }
+
+    function toCountContinuation()
+    {
+        $user = $this->guard()->user();
+        $login = DB::table('logins')->where('user_id', $user->id)->first();
+        $yestaday = Carbon::yesterday()->format('Y-m-d');
+
+        $toContinuation = ($login->login_date < $yestaday) ? $this->resetTotalContinuation : $user->total_continuation++;
+        $toCumulative = ($login->login_date <= $yestaday) ?? $user->total_continuation++;
+
+        DB::table('logins')->where('user_id', $login->user_id)->update(['login_date' => now()->format('Y-m-d')]);
+        User::where('id', $login->user_id)->update(['total_continuation' => $toContinuation, 'total_cumulative' => $toCumulative]);
     }
 }
