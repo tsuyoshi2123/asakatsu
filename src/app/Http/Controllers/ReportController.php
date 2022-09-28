@@ -18,7 +18,7 @@ class ReportController extends Controller
      */
     public function reportIndex()
     {
-        $loginUser = User::find(Auth::id())->first();
+        $loginUser = User::find(Auth::id());
         $userList = User::get();
         return view('report', compact('userList', 'loginUser'));
     }
