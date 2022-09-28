@@ -9,5 +9,8 @@ class Login extends Model
 {
     use HasFactory;
 
+    const CREATED_AT = NULL;
+    const UPDATED_AT = NULL;
+
     protected $fillable = ['user_id', 'login_date'];
 }

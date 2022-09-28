@@ -2,19 +2,18 @@
 
 namespace Database\Seeders;
 
+use App\Models\Login;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class LoginSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call([
-            LoginSeeder::class
-        ]);
+        Login::factory()->count(2)->create();
     }
 }
