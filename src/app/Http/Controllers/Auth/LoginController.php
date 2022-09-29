@@ -88,7 +88,7 @@ class LoginController extends Controller
         $yestaday = Carbon::yesterday()->format('Y-m-d');
 
         $toContinuation = ($login->login_date < $yestaday) ? $this->resetTotalContinuation : $user->total_continuation++;
-        $toCumulative = ($login->login_date <= $yestaday) ?? $user->total_continuation++;
+        $toCumulative = ($login->login_date <= $yestaday) ? $user->total_cumulative : $user->total_cumulative++;
 
         DB::table('logins')->where('user_id', $login->user_id)->update(['login_date' => now()->format('Y-m-d')]);
         User::where('id', $login->user_id)->update(['total_continuation' => $toContinuation, 'total_cumulative' => $toCumulative]);
