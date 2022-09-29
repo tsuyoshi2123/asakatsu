@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 
 class UserFactory extends Factory
@@ -20,7 +19,7 @@ class UserFactory extends Factory
             'name' => $faker->name(),
             'email' => $faker->unique()->safeEmail(),
             'password' => Hash::make('tt2123244'),
-            'comment'   => Str::random(10),
+            'comment'   => $faker->realText(20),
             'total_continuation' => $faker->unique()->numberBetween(10,50),
             'total_cumulative' => $faker->unique()->numberBetween(100,200),
         ];
