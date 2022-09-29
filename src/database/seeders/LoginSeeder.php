@@ -14,6 +14,6 @@ class LoginSeeder extends Seeder
      */
     public function run()
     {
-        Login::factory()->count(2)->create();
+        Login::factory()->count(5)->create();
     }
 }
