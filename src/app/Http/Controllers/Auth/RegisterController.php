@@ -36,6 +36,11 @@ class RegisterController extends Controller
     protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
+     * Defualt Total continuation
+     */
+    protected $DafultNumber = 1;
+
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -69,9 +74,11 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'name'               => $data['name'],
+            'email'              => $data['email'],
+            'password'           => Hash::make($data['password']),
+            'total_cumulative'   => $this->DafultNumber,
+            'total_continuation' => $this->DafultNumber,
         ]);
     }
 
