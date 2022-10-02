@@ -90,11 +90,18 @@
             &__font {
                 font-size: 18px;
             }
-            .name, .comment, .continued {
-                margin-left: 100px;
+            .name, .comment, .continued, .cumulative {
+                text-align: center;
+
             }
-            .cumulative {
-                margin-left: 50px;
+            .name {
+                width: 35%;
+            }
+            .comment {
+                width: 25%;
+            }
+            .continued, .cumulative {
+                width: 15%;
             }
         }
     }

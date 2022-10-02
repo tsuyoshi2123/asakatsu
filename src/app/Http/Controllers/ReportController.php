@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Report;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class ReportController extends Controller
 {
@@ -17,6 +18,8 @@ class ReportController extends Controller
      */
     public function reportIndex()
     {
-        return view('report');
+        $loginUser = User::find(Auth::id());
+        $userList = User::get();
+        return view('report', compact('userList', 'loginUser'));
     }
 }

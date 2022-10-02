@@ -15,15 +15,15 @@
                 <example-date></example-date>
             </div>
             <div class="area__list">
-                @for ($i = 0; $i < 5; $i++)
+                @foreach($userList as $user)
                     <div class="area__list__user">
                         <img src="/image/fuji.png" alt="/" class="pic">
-                        <p class="area__list__user__font name">hoge太郎</p>
-                        <p class="area__list__user__font comment">hogeレビュー</p>
-                        <p class="area__list__user__font continued">継続：10</p>
-                        <p class="area__list__user__font cumulative">累計：20</p>
+                        <p class="area__list__user__font name">{{ $user->name }}</p>
+                        <p class="area__list__user__font comment">{{ $user->comment}}</p>
+                        <p class="area__list__user__font continued">継続：{{ $user->total_continuation }}</p>
+                        <p class="area__list__user__font cumulative">総計：{{ $user->total_cumulative }}</p>
                     </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </div>

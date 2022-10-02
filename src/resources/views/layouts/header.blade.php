@@ -22,8 +22,8 @@
             @auth
                 <a href="/" class="navlink">
                     <table style="height: 30px">
-                        <tr><td>継続/累計</td></tr>
-                        <tr><td>10/20</td></tr>
+                        <tr><td>継続/総計</td></tr>
+                        <tr><td>{{ $loginUser->total_continuation . '/' . $loginUser->total_cumulative }}</td></tr>
                     </table>
                     <img src="/image/fuji.png" alt="/" class="navlink--pic">
                     <i class="fa-solid fa-caret-down navlink--triangle"></i>
