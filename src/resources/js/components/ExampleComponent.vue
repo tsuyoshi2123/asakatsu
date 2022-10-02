@@ -8,60 +8,16 @@
         <p class="outer__list__title" v-if="left">週間ランキング</p>
         <p class="outer__list__title" v-if="center">月間ランキング</p>
         <p class="outer__list__title" v-if="right">年間ランキング</p>
-        <div class="outer__article">
-            <p class="outer__article__index rank">rank1</p>
+        <div class="outer__article" v-for="i in 10">
+            <p class="outer__article__index rank">rank {{i}}</p>
             <p class="outer__article__index name">テスト名前</p>
-            <p class="outer__article__index total">○○ 25</p>
-        </div>
-        <div class="outer__article">
-            <p class="outer__article__index rank">rank1</p>
-            <p class="outer__article__index name">テスト名前</p>
-            <p class="outer__article__index total">○○ 25</p>
-        </div>
-        <div class="outer__article">
-            <p class="outer__article__index rank">rank1</p>
-            <p class="outer__article__index name">テスト名前</p>
-            <p class="outer__article__index total">○○ 25</p>
-        </div>
-        <div class="outer__article">
-            <p class="outer__article__index rank">rank1</p>
-            <p class="outer__article__index name">テスト名前</p>
-            <p class="outer__article__index total">○○ 25</p>
-        </div>
-        <div class="outer__article">
-            <p class="outer__article__index rank">rank1</p>
-            <p class="outer__article__index name">テスト名前</p>
-            <p class="outer__article__index total">○○ 25</p>
-        </div>
-        <div class="outer__article">
-            <p class="outer__article__index rank">rank1</p>
-            <p class="outer__article__index name">テスト名前</p>
-            <p class="outer__article__index total">○○ 25</p>
-        </div>
-        <div class="outer__article">
-            <p class="outer__article__index rank">rank1</p>
-            <p class="outer__article__index name">テスト名前</p>
-            <p class="outer__article__index total">○○ 25</p>
-        </div>
-        <div class="outer__article">
-            <p class="outer__article__index rank">rank1</p>
-            <p class="outer__article__index name">テスト名前</p>
-            <p class="outer__article__index total">○○ 25</p>
-        </div>
-        <div class="outer__article">
-            <p class="outer__article__index rank">rank1</p>
-            <p class="outer__article__index name">テスト名前</p>
-            <p class="outer__article__index total">○○ 25</p>
-        </div>
-        <div class="outer__article">
-            <p class="outer__article__index rank">rank1</p>
-            <p class="outer__article__index name">テスト名前</p>
-            <p class="outer__article__index total">○○ 25</p>
+            <p class="outer__article__index total">累計 25</p>
         </div>
     </div>
 </template>
 
 <script>
+
 export default {
     el: '#list-tag',
     data() {
