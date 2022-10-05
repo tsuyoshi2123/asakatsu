@@ -54,9 +54,11 @@
     &__article {
         color: red;
         display: flex;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 20px;
         &__index {
-            margin-top: 20px;
-            margin-left: 45px;
+            width: 33%;
         }
     }
 }
