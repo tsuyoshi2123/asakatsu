@@ -8,10 +8,10 @@
         <p class="outer__list__title" v-if="left">週間ランキング</p>
         <p class="outer__list__title" v-if="center">月間ランキング</p>
         <p class="outer__list__title" v-if="right">年間ランキング</p>
-        <div class="outer__article" v-for="i in 10">
-            <p class="outer__article__index rank">rank {{i}}</p>
-            <p class="outer__article__index name">テスト名前</p>
-            <p class="outer__article__index total">累計 25</p>
+        <div class="outer__article" v-for="(rank, index) in ranks">
+            <p class="outer__article__index rank">{{ index + 1 }}</p>
+            <p class="outer__article__index name">{{ rank.name }}</p>
+            <p class="outer__article__index total">{{ rank.total_continuation }}</p>
         </div>
     </div>
 </template>
@@ -26,6 +26,9 @@ export default {
             center: false,
             right: false,
         };
+    },
+    props: {
+        ranks: {}
     },
     methods: {
         watcheLeft: function() {

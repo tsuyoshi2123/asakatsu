@@ -20,6 +20,12 @@ class ReportController extends Controller
     {
         $loginUser = User::find(Auth::id());
         $userList = User::get();
-        return view('report', compact('userList', 'loginUser'));
+        $ranks = User::get();
+        $ranks = $ranks->sortBy('total_cumulative')->values()->toArray();
+        return view('report', compact(
+            'userList',
+            'loginUser',
+            'ranks'
+        ));
     }
 }
