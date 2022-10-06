@@ -14,7 +14,7 @@ class CreateLoginsTable extends Migration
     public function up()
     {
         Schema::create('logins', function (Blueprint $table) {
-            $table->integer('user_id')->unique();
+            $table->foreignId('user_id')->constrained('users');
             $table->date('login_date');
         });
     }
