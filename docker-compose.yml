@@ -2,7 +2,9 @@ version: '3.9'
 
 services:
   web:
-    build: .
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
     volumes:
       - ./src:/var/www/html
     ports:
@@ -18,3 +20,4 @@ services:
       MYSQL_DATABASE: asakatsu
     volumes:
       - ./db:/var/lib/mysql
+      - ./etc/my.cnf:/etc/mysql/mysql.conf.d/my.cnf
