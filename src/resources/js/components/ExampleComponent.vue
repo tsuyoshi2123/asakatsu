@@ -1,17 +1,19 @@
 <template>
-    <div class="outer__index">
-        <a v-on:click="watcheLeft" class="outer__index__tag weekly">週間</a>
-        <p v-on:click="watchCenter" class="outer__index__tag months">月間</p>
-        <p v-on:click="watchRight" class="outer__index__tag years">年間</p>
-    </div>
-    <div class="outer__list">
-        <p class="outer__list__title" v-if="left">週間ランキング</p>
-        <p class="outer__list__title" v-if="center">月間ランキング</p>
-        <p class="outer__list__title" v-if="right">年間ランキング</p>
-        <div class="outer__article" v-for="(rank, index) in ranks">
-            <p class="outer__article__index rank">{{ index + 1 }}</p>
-            <p class="outer__article__index name">{{ rank.name }}</p>
-            <p class="outer__article__index total">{{ rank.total_continuation }}</p>
+    <div>
+        <div class="outer__index">
+            <a v-on:click="watcheLeft" class="outer__index__tag weekly">週間</a>
+            <p v-on:click="watchCenter" class="outer__index__tag months">月間</p>
+            <p v-on:click="watchRight" class="outer__index__tag years">年間</p>
+        </div>
+        <div class="outer__list">
+            <p class="outer__list__title" v-if="left">週間ランキング</p>
+            <p class="outer__list__title" v-if="center">月間ランキング</p>
+            <p class="outer__list__title" v-if="right">年間ランキング</p>
+            <div class="outer__article" v-for="(rank, index) in ranks" :key="index">
+                <p class="outer__article__index rank">{{ index + 1 }}</p>
+                <p class="outer__article__index name">{{ rank.name }}</p>
+                <p class="outer__article__index total">{{ rank.total_continuation }}</p>
+            </div>
         </div>
     </div>
 </template>
