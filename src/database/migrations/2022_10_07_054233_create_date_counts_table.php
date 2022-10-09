@@ -14,7 +14,7 @@ class CreateDateCountsTable extends Migration
     public function up()
     {
         Schema::create('date_counts', function (Blueprint $table) {
-            $table->id();
+            $table->foreignId('date_start_id')->constrained('date_starts');
             $table->foreignId('user_id')->constrained('users');
             $table->integer('weekly_count')->default(1);
             $table->integer('month_count')->default(1);

@@ -14,7 +14,7 @@ class CreateDateStartsTable extends Migration
     public function up()
     {
         Schema::create('date_starts', function (Blueprint $table) {
-            $table->unsignedBigInteger('date_count_id')->constrained('date_counts');
+            $table->id();
             $table->date('weekly_date');
             $table->date('month_date');
             $table->date('yearly_date');
