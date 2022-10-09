@@ -14,9 +14,10 @@ class LoginFactory extends Factory
      */
     public function definition()
     {
+        $faker = \Faker\Factory::create("ja_JP");
         return [
             'user_id' => User::factory()->create()->id,
-            'login_date' => now()->format('Y-m-d'),
+            'login_date' => $faker->dateTimeBetween('-3 day', 'now')->format('Y-m-d'),
         ];
     }
 }
