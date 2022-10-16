@@ -10,12 +10,15 @@ class DateCount extends Model
 {
     use HasFactory;
 
+    const CREATED_AT = NULL;
+    const UPDATED_AT = NULL;
+
     /**
      * users テーブルのリレーションの設定
      * @return HasOne
      */
     public function user(): HasOne
     {
-        return $this->hasOne(User::class);
+        return $this->hasOne(User::class, 'id');
     }
 }
