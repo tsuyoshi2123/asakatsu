@@ -7,7 +7,7 @@
                 <p class="outer__heading__lead">テスト区テスト市テスト町<br>テストマンション1-1-1<br>テスト団地101</p>
             </div>
             <div id="list-tag">
-                <example-component :ranks="{{ json_encode($ranks) }}"></example-component>
+                <example-component :ranks="{{ json_encode($outPutRanks) }}"></example-component>
             </div>
         </div>
         <div class="area">
