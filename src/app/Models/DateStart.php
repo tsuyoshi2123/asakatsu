@@ -6,17 +6,25 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Login extends Model
+class DateStart extends Model
 {
     use HasFactory;
 
-    const CREATED_AT = NULL;
     const UPDATED_AT = NULL;
-
-    protected $fillable = ['user_id', 'login_date'];
+    const DELETED_AT = NULL;
+    const CREATED_AT = NULL;
 
     /**
-     * usersテーブルのリレーションの設定
+     * date_counts テーブルのリレーションの設定
+     * @return HasOne
+     */
+    public function DateCount(): HasOne
+    {
+        return $this->hasOne(DateCount::class);
+    }
+
+    /**
+     * date_counts テーブルのリレーションの設定
      * @return HasOne
      */
     public function user(): HasOne

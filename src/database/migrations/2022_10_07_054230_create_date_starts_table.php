@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLoginsTable extends Migration
+class CreateDateStartsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateLoginsTable extends Migration
      */
     public function up()
     {
-        Schema::create('logins', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained('users');
-            $table->date('login_date');
+        Schema::create('date_starts', function (Blueprint $table) {
+            $table->id();
+            $table->date('weekly_date');
+            $table->date('month_date');
+            $table->date('yearly_date');
         });
+
     }
 
     /**
@@ -26,6 +29,6 @@ class CreateLoginsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('logins');
+        Schema::dropIfExists('date_starts');
     }
 }
