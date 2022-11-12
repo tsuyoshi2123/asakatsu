@@ -25,7 +25,7 @@
         border: 1px solid variables.$border-color;
         &__box {
             margin-top: 48px;
-            margin-bottom: 29px;
+            margin-bottom: 12px;
             &__item:first-child {
                 margin-top: 0;
             }
@@ -75,42 +75,61 @@
                     margin-right: 5px;
                 }
                 &--remember {
-                    margin-right: 75px;
                     font-size: 14px;
+                    margin-right: 35px;
                     padding: 10px 7px;
                     color: variables.$font-color;
                 }
-                .btn--regist {
-                    font-size: 11px;
-                    border-radius: 5px;
-                    padding: 10px 12px;
-                    margin-right: 45px;
-                    background-color: variables.$common-btn;
-                    text-decoration: none;
-                    text-align: center;
-                    color: variables.$font-color;
-                }
-                .btn--regist:hover {
-                    opacity: 0.8;
+                .forgot__box {
+                    margin-right: 10px;
+                    display: flex;
+                    justify-content: center;
+                    &__item {
+                        text-align: right;
+                        padding: 10px 5px;
+                        .btn--forgot {
+                            font-size: 12px;
+                            display: inline-block;
+                            text-decoration: none;
+                            border-bottom: 0.5px solid variables.$font-color;
+                            color: variables.$font-color;
+                        }
+                        .btn--forgot:hover {
+                            opacity: 0.6;
+                        }
+                    }
                 }
             }
         }
-        .forgot__box {
+        .other__contents {
             display: flex;
             justify-content: center;
-            &__item {
+            &__wrap {
                 width: 450px;
-                text-align: right;
+                display: flex;
+                justify-content: space-between;
+                &--title {
+                    display: inline-block;
+                    font-size: 14px;
+                    color: rgba(0, 0, 0, 0.5);
+                }
+                .file_upload {
+                    font-size: 10px;
+                    color: rgba(0, 0, 0, 0.5);
+                }
             }
-            .btn--forgot {
-                display: inline-block;
+            .btn--regist {
+                font-size: 11px;
+                border-radius: 5px;
+                padding: 10px 12px;
+                margin-right: 15px;
+                background-color: variables.$common-btn;
                 text-decoration: none;
-                margin-right: 100px;
-                border-bottom: 0.5px solid variables.$font-color;
+                text-align: center;
                 color: variables.$font-color;
             }
-            .btn--forgot:hover {
-                opacity: 0.6;
+            .btn--regist:hover {
+                opacity: 0.8;
             }
         }
     }

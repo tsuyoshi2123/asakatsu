@@ -56,21 +56,29 @@
                 </div>
             </div>
             <div class="form__check">
-                <p class="form__check__wrap">
+                <div class="form__check__wrap">
                     <input name="remember" type="checkbox" class="form__check__wrap--input" {{ old('remember') ? 'checked' : '' }}>
                     <label for="remember" id="remember" class="form__check__wrap--remember">
                         {{ __('Remember Me') }}
                     </label>
+                    <div class="forgot__box">
+                        <div class="forgot__box__item">
+                            <a class="btn--forgot" href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="other__contents">
+                <div class="other__contents__wrap">
+                    <label class="other__contents__wrap--title">
+                        SelectProfile<br>Picure
+                    </label>
+                    <input name="file_upload" type="file" class="file_upload">
                     <button type="submit" class="btn--regist">
                         {{ __('Regist') }}
                     </button>
-                </p>
-            </div>
-            <div class="forgot__box">
-                <div class="forgot__box__item">
-                    <a class="btn--forgot" href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
-                    </a>
                 </div>
             </div>
         </div>
