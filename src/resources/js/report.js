@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import ExampleComponent from './components/ExampleComponent.vue';
 import ExampleDate from './components/ExampleDate.vue';
+import SelectPicture from './components/SelectPicture.vue';
 
 createApp({
     components: {
@@ -13,3 +14,9 @@ createApp({
         ExampleDate
     }
 }).mount('#date-current');
+
+createApp({
+    components: {
+        SelectPicture
+    }
+}).mount('#othrer-wrap');

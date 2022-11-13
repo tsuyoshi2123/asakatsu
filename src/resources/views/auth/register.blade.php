@@ -71,11 +71,11 @@
                 </div>
             </div>
             <div class="other__contents">
-                <div class="other__contents__wrap">
+                <div class="other__contents__wrap" id="othrer-wrap">
                     <label class="other__contents__wrap--title">
-                        SelectProfile<br>Picure
+                        {{ __('SelectPicture') }}
                     </label>
-                    <input name="file_upload" type="file" class="file_upload">
+                    <select-picture></select-picture>
                     <button type="submit" class="btn--regist">
                         {{ __('Regist') }}
                     </button>
