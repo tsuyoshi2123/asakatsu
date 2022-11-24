@@ -25,7 +25,7 @@
                         <tr><td>継続/総計</td></tr>
                         <tr><td>{{ $loginUser->total_continuation . '/' . $loginUser->total_cumulative }}</td></tr>
                     </table>
-                    <img src="/image/fuji.png" alt="/" class="navlink--pic">
+                    <img src="storage/avatar/fuji.png" alt="/" class="navlink--pic">
                     <i class="fa-solid fa-caret-down navlink--triangle"></i>
                 </a>
             @else

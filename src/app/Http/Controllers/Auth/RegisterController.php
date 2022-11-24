@@ -68,18 +68,28 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  object  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
+    protected function create(object $request)
     {
-        return User::create([
-            'name'               => $data['name'],
-            'email'              => $data['email'],
-            'password'           => Hash::make($data['password']),
+        $user = $request->all();
+        $setUser = [
+            'name'               => $user['name'],
+            'email'              => $user['email'],
+            'password'           => Hash::make($user['password']),
             'total_cumulative'   => $this->DafultNumber,
             'total_continuation' => $this->DafultNumber,
-        ]);
+            'file_name'          => ''
+        ];
+
+        //  File Upload
+        if (!empty($user['file_name'])) {
+            $image_path = $request->file('file_name')->store('public/avatar/');
+            $setUser['file_name'] = basename($image_path);  
+        }
+
+        return User::create($setUser);
     }
 
     /**
@@ -92,7 +102,7 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
 
-        event(new Registered($user = $this->create($request->all())));
+        event(new Registered($user = $this->create($request)));
 
         Login::insert([
             'user_id' => $user->id,

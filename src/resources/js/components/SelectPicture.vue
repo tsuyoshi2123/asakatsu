@@ -1,24 +1,27 @@
 <template>
     <label class="file_upload">
-        <input name="file_upload" type="file">SelectFile
+        <input @change="selectFile" name="file_name" type="file">SelectFile
     </label>
-    <!-- ファイルアップロードのタイミングでプレビュー画像を表示したい -->
-    <div v-show="isShow">
-        <img src="/image/fuji.png" alt="/" class="preview">
+    <div v-if="targetFile">
+        <img :src="targetFile" class="preview">
     </div>
 </template>
 
 <script>
-// axios 画像アップロードする
 export default {
     data() {
         return {
-            isShow: true
+            targetFile: "",
         }
     },
     methods: {
-        //
-    }
+        selectFile: function(event) {
+            event.preventDefault();
+            const file = event.target.files[0];
+            this.targetFile = URL.createObjectURL(file);
+            formData.append('name', 'file_name', this.targetFile);
+        }
+    },
 }
 
 </script>
@@ -38,7 +41,6 @@ export default {
     .preview {
         width: 55px;
         height: 55px;
-        background-color: #000;
         object-fit: cover;
     } 
 </style>
