@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="regist-container">
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
         <div class="card__section">
             <p class="card__section__title">{{ __('Register') }}</p>
@@ -39,7 +39,7 @@
                     <div class="registration">
                         <p class="form-box" for="password">
                             <label class="password">{{ __('Password') }}</label>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" value="tt2123244">
                         </p>
                         @error('password')
                             <span class="help-block invalid-feedback" role="alert">
@@ -51,7 +51,7 @@
                 <div class="card__contents__box__item">
                     <p class="form-box" for="confirm-password">
                         <label class="confirm-password">{{ __('Confirm Password') }}</label>
-                        <input id="confirm-password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        <input id="confirm-password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" value="tt2123244">
                     </p>
                 </div>
             </div>
