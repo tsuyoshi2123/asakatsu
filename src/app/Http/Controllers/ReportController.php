@@ -19,19 +19,19 @@ class ReportController extends Controller
      */
     public function reportIndex()
     {
-        $userList = User::get();
+        $userList = $target_user = User::get()->toArray();
         $loginUser = User::find(Auth::id());
 
         $rankToDesc = [];
         $dateArray = ['weekly', 'month', 'yearly'];
         foreach ($dateArray as $date) {
-            $rankToDesc[$date] = DateCount::get()->sortByDesc($date . '_count')->values()->toArray();
+            $rankToDesc[$date] = DateCount::limit(10)->get()->sortByDesc($date . '_count')->values()->toArray();
         }
 
         $outPutRanks = [];
         foreach($rankToDesc as $date => $dateRanks) {
             foreach($dateRanks as $index => $rank) {
-                $outPutRanks[$date][$index]['name'] = User::find($rank['user_id'])->name;
+                $outPutRanks[$date][$index]['name'] = $target_user[$rank['user_id']]['name'];
                 $outPutRanks[$date][$index]['count'] = $rank[$date . '_count'];
             }
         }
